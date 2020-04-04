@@ -1,0 +1,10 @@
+Data Analysis (Heroes Of Pymoli):
+
+1.Even though the percentage of players are overwhemingly Males, the purchase count of Male and Females are almost equivalent in the range of 1.35 to 1.39 purchases per person.
+
+
+2.Top spenders seem to be distributed across age groups assuming their SN reflects the last two digits as their birth year.
+
+
+
+3.Final Critic is the most popular and most profitable item. Nirvana is surely one of the Profitable items but just misses out to be in the Popular category among others due to slightly higher Item Price.

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+  <!-- Required meta tags -->
+
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+
+
+  <!-- Bootstrap ver 3.4.1 -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+
+
+  <!--CSS Link-->
+
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+
+
+  <title>Mission to Mars</title>
+
+</head>
+
+
+
+<body>
+
+  <!-- Content Section -->
+
+  <div class="container-fluid">
+
+    <div class="jumbotron text-center"
+
+      style="background-image: url('static/image/mission_to_mars.png'); background-repeat: no-repeat;">
+
+      <h1 class="display-4">Mission to Mars</h1>
+
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+
+    </div>
+
+
+
+    <!-- News Section -->
+
+    <div class="container">
+
+      <div class="col col-12">
+
+        <h2>Latest News from Mars</h2>
+
+        <p><strong>{{ mars_dict.news_title }}</strong></p>
+
+        <p>{{ mars_dict.news_p }}</p>
+
+      </div>
+
+      <!--<hr> -->
+
+    </div>
+
+
+
+    <!--Mars Info Section-->
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col col-12">
+
+          <!-- Featured Img -->
+
+          <div class="col col-lg-8 col-8">
+
+            <h2>Today's Featured Image</h2>
+
+            <img src="{{ mars_dict.featured_image_url }}" class="thumbnail img-responsive">
+
+          </div>
+
+          <!--Latest Tweet-->
+
+          <div class="col col-lg-4 col-4">
+
+            <div>
+
+              <!-- Creating 2 lines space -->
+
+              <p>&nbsp</p>
+
+              <p>&nbsp</p>
+
+            </div>
+
+            <div class="panel panel-default">
+
+              <div class="panel-heading"><b>Current Weather on Mars</b></div>
+
+              <div class="panel-body">
+
+                {{ mars_dict.latest_tweet|safe }}
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!--Mars Facts-->
+
+          <div class="col col-lg-4 col-4">
+
+            <h2>Mars Facts</h2>
+
+            <p>{{ mars_dict.mars_facts_table_html|safe }}</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- Hemishpere Section -->
+
+    <div class="container">
+
+      <hr>
+
+      <div class="col col-12">
+
+        <h2><b>Here is a closer look at the hemispheres of Mars</b></h2>
+
+        <div class="row">
+
+          {%for image in mars_dict.hemispheres_image_urls%}
+
+          <div class="col col-lg-6 col-6 text-primary">
+
+            <p><b>{{ image.title }}</b></p>
+
+            <img src="{{ image.img_url }}" class="thumbnail img-responsive">
+
+          </div>
+
+          {%endfor%}
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+  <!-- End of Content Section -->
+
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+
+    integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+
+    crossorigin="anonymous"></script>
+
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+
+    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+
+    crossorigin="anonymous"></script>
+
+</body>
+
+
+
+</html>
